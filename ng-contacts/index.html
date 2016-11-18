@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html ng-app>
+   <head>
+         <title>Address Book</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+   </head>
+   <body ng-controller="PeopleController">
+      <h1>Address Book</h1> 
+   <div class="wrapper"
+          <div class="contact-item" ng-repeat="person in people">
+                <div class="name">{{person.name}} - {{person.phone}}</div>
+                <div class="city">{{person.city}} </div>
+
+          </div>
+   </div> 
+  <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
+  <script src="/javascripts/app.js"></script>
+  <script src="/javascripts/AppConstants.js"></script>
+  <script src="/javascripts/AppConfig.js"></script>
+  <script src="/javascripts/factories/ItemFactory.js"></script>
+  <script src="/javascripts/controllers/NavCtrl.js"></script>
+  <script src="/javascripts/controllers/ToDoCtrl.js"></script>
+   </body>
+</html>

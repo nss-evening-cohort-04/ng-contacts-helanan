@@ -1,0 +1,22 @@
+{
+  "name": "Angular_Address_Book",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Zoe Ames <helanan@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/helanan/angular-contacts",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8"
+  }
+}
