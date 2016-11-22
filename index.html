@@ -1,28 +1,99 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html ng-app>
-   <head>
-         <title>Address Book</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
-   </head>
-   <body ng-controller="PeopleController">
-      <h1>Address Book</h1> 
-   <div class="wrapper"
-          <div class="contact-item" ng-repeat="person in people">
-                <div class="name">{{person.name}} - {{person.phone}}</div>
-                <div class="city">{{person.city}} </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Helana's Contact Book</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+  </head>
 
+  <body ng-app="ContactsApp">
+<!--   nav start -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <form class="navbar-form navbar-left" role="search"> Helanas App
+          <div class="form-group">
+            <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+            <p class="navbar-text">Signed in as {{user.name}}</p>
           </div>
-   </div> 
-  <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
-  <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
-  <script src="/javascripts/app.js"></script>
-  <script src="/javascripts/AppConstants.js"></script>
-  <script src="/javascripts/AppConfig.js"></script>
-  <script src="/javascripts/factories/ItemFactory.js"></script>
-  <script src="/javascripts/controllers/NavCtrl.js"></script>
-  <script src="/javascripts/controllers/ToDoCtrl.js"></script>
-   </body>
-</html>
+        </form>
+        </div>
+      </div>
+    </nav> <!-- nav end -->
+
+    <div ng-controller="AddContactCtrl">
+      <div class="row">
+        
+        <div class="col-xs-6 col-xs-offset-3">
+          <button class="col-xs-6 btn btn-success" ng-click="newContact()">New Contacts </button>
+          <button class="col-xs-6 btn btn-info" ng-click="allContacts()">All Contacts</button>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-xs-offset-2 col-xs-8">
+            <h1> Contact Description </h1>
+            <div ng-show="!showContactView">
+              <h3> New Contacts </h3>
+              <form>
+                <div class="form-group">
+                  <label>Contact Info</label>
+                  <input type="text" class="form-control" placeholder="Add New Contact" ng-model="newContact.group">
+                </div>
+                <div class="form-group">
+                  <label>My Groups</label>
+                  <input type="text" class="form-control" placeholder="Add New Group" ng-model="newContact.assignedTo">
+                </div>
+                <button type="button" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewContact()"> Add New Contact</button>
+              </form>
+            </div>
+            <div ng-show="showContactView">
+              <div class="row">
+                <div class="col-xs-6 col-xs-offset-3">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Find..." ng-model="searchText">
+                  </div>
+                </div>
+              </div>
+              <h3>Contact Details</h3>
+              <div ng-repeat="contact in contacts | filter: {isCompleted:false}|filter:searchText">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <div class="col-xs-1"><input type="checkbox" name="" ng-checked="contact.isCompleted"></div>
+                    <div class="col-xs-9">{{contact.firstName}} {{contact.lastName}}</div>
+                    <div class="col-xs-1">{{contact.assignedTo}}</div>
+                    <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Completed</h3>
+              <div ng-repeat="contact in contacts | filter: {isCompleted:true}">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <div class="col-xs-1"><input type="checkbox" name="" ng-checked="contact.isCompleted"></div>
+                  <div class="col-xs-9">{{contact.state}}</div>
+                  <div class="col-xs-1">{{contact.assignedTo}}</div>
+                  <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o"></button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+      <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+      <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
+      <script src="/javascripts/app.js"></script>
+      <script src="/javascripts/AppConstants.js"></script>
+      <script src="/javascripts/AppConfig.js"></script>
+      <script src="/javascripts/factories/ContactFactory.js"></script>
+      <script src="/javascripts/controllers/AddContactCtrl.js"></script>
+    </body>
+  </html>

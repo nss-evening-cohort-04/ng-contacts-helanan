@@ -1,0 +1,113 @@
+{
+	"contacts": {
+		"contact0":{
+			"id": 0,
+			"firstName": "Helana",
+			"lastName": "Nosratbakhsh",
+			"email": "helana@myemma.com",
+			"phone": "267-443-8860",
+			"city": "Nashville",
+			"state": "TN",
+			"zip": "37216",
+			"group": "friends",
+			"assignedTo": "Helana"
+		},
+
+		"contact1":{
+			"id": 1,
+			"firstName": "Ryan",
+			"lastName": "Belcher",
+			"email": "ryan@myemma.com",
+			"phone": "615-443-8861",
+			"city": "Nashville",
+			"state": "TN",
+			"zip": "37210",
+			"group": "friends",
+			"assignedTo": "Casey"
+		},
+
+		"contact2":{
+			"id": 2,
+			"firstName": "Meg",
+			"lastName": "Backus",
+			"email": "mbackus@stratfordfriends.org",
+			"phone": "610-459-0437",
+			"city": "Glen Mills",
+			"state": "PA",
+			"zip": "19342",
+			"group": "family",
+			"isCompleted": true,
+			"assignedTo": "Matthew"
+		},
+
+		"contact3":{
+			"id": 3,
+			"firstName": "Brenden",
+			"lastName": "Nosratbakhsh",
+			"email": "brenden10@hotmail.com",
+			"phone": "215-443-8860",
+			"city": "Philadelphia",
+			"state": "PA",
+			"zip": "19234",
+			"group": "family",
+			"isCompleted": false,
+			"assignedTo": "Helana"
+		},
+
+		"contact4":{
+			"id": 4,
+			"firstName": "Pearl",
+			"lastName": "Nichols",
+			"email": "pearl@myemma.com",
+			"phone": "615-443-8860",
+			"city": "Nashville",
+			"state": "TN",
+			"zip": "37216",
+			"group": "coworkers",
+			"isCompleted": false,
+			"assignedTo": "Matthew"
+		},
+
+		"contact5":{
+			"id": 5,
+			"firstName": "Amy",
+			"lastName": "Rader",
+			"email": "arader@myemma.com",
+			"phone": "267-443-8861",
+			"city": "Nashville",
+			"state": "TN",
+			"zip": "37216",
+			"group": "coworkers",
+			"isCompleted": false,
+			"assignedTo": "Helana"
+		},
+
+		"contact6":{
+			"id": 6,
+			"firstName": "Justin",
+			"lastName": "Beiber",
+			"email": "jbeibs@justinforever.com",
+			"phone": "267-443-8865",
+			"city": "Los Angeles",
+			"state": "CA",
+			"zip": "37216",
+			"group": "VIP",
+			"isCompleted": false,
+			"assignedTo": "Casey"
+		},
+
+		"contact7":{
+			"id": 7,
+			"firstName": "Johnny",
+			"lastName": "Cash",
+			"email": "johnnyc@aol.com",
+			"phone": "267-443-1111",
+			"city": "Nashville",
+			"state": "TN",
+			"zip": "37216",
+			"group": "VIP",
+			"isCompleted": false,
+			"assignedTo": "Helana"
+		}
+	}
+}

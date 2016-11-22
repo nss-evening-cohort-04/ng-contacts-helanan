@@ -2,7 +2,7 @@
 
 app.factory("ContactFactory", function($q, $http, FIREBASE_CONFIG){
 
-	var getContactList = function(){
+	var getContactView = function(){
 	 return $q((resolve, reject) =>{
 	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json`)
 	 	.success(function(response){
@@ -20,9 +20,16 @@ app.factory("ContactFactory", function($q, $http, FIREBASE_CONFIG){
 	}
 
 	var postNewContact = function(newContact){
-		reutrn $q((resolve, reject) =>{
+		return $q((resolve, reject) =>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`,
 				JSON.stringify({
+					firstName: newContact.firstName,
+					lastName: newContact.lastName,
+					email: newContact.email,
+					phone: newContact.phone,
+					city: newContact.city,
+					state: newContact.state,
+					zip: newContact.zip,
 					assignedTo: newContact.assignedTo,
 					isCompleted: newContact.isCompleted,
 					task: newContact.contact
@@ -37,6 +44,6 @@ app.factory("ContactFactory", function($q, $http, FIREBASE_CONFIG){
 		})
 	}
 
-	return {getContactList:getContactList, postNewContact:postNewContact}
+	return {getContactView:getContactView, postNewContact:postNewContact}
 })
 

@@ -3,14 +3,15 @@
 app.controller("AddContactCtrl", function($scope, ContactFactory){
 	$scope.welcome = "hi";
 	$scope.showContactView = true;
-	$scope.newContact = {};
+	$scope.newGroup = {};
 	$scope.contacts = [];
 
 	let getContacts = function(){
-		ContactFactory.getContacts().then(function(fbContacts){
+		ContactFactory.getContactView().then(function(fbContacts){
 			$scope.contacts = fbContacts;
 		});
 	}
+
 getContacts();
 	$scope.allContacts = function(){
 		$scope.showContactView = true;
@@ -28,11 +29,4 @@ getContacts();
 	 	 $scope.showContactView = true;
 	 });
    }
-});
-
-
-			$scope.newTask = {};
-			$scope.showListView = true;
-		});
-	}
 });

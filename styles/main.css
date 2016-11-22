@@ -1,71 +1,46 @@
-body h1 {
-  color: green;
-  text-align: center; }
+body {
+  font-family: sans-serif;
+  font-weight: 100;
+  background: #ccc; 
+  padding-bottom: 70px; }
 
-.search-bar {
-  text-align: center; }
-  .search-bar input {
-    margin-bottom: 20px; }
+/*navbar*/
+.btn btn-default navbar-btn {
+  text-align: left;
+  float: left; 
+}
 
-#incomplete-tasks, #completed-tasks {
-  padding-left: 40px;
-  padding-right: 40px; }
+.row {
+    margin-top: 100px;
+}
 
-.new-text-container {
-  padding: 20px 0px; }
 
-.newtodo-input {
-  padding-top: 5px; }
+h1 {
+  text-align: center;
+  color: #666;
+  text-shadow: 0px 2px 0px #fff; 
+  }
 
-.inputTask {
-  display: none;
-  width: 93%;
-  margin-left: 10px;
-  margin-top: 6px; }
+.name {
+  font-size: 18px; }
 
-.inputLabel {
-  font-size: 18px;
-  line-height: 40px;
-  width: 237px;
-  padding: 0 0 0 11px; }
+.city {
+  font-style: italic;
+  font-size: 13px; }
 
-.checkboxStyle {
-  margin-top: 15px !important; }
+.wrapper {
+  width: 550px;
+  margin: 0 auto;
+  box-shadow: 5px 5px 5px #555;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px; }
 
-h3 {
-  color: #333;
-  font-weight: 700;
-  font-size: 15px;
-  border-bottom: 2px solid #333;
-  padding: 30px 0 10px;
-  margin: 0; }
+.contact-item {
+  border-bottom: thin solid #ccc;
+  padding: 10px; }
 
-li * {
-  float: left; }
+.panel-body {
+  color: black;
+}
 
-li, h3 {
-  clear: both;
-  list-style: none; }
-
-label[for='new-task'] {
-  display: block;
-  margin: 0 0 20px; }
-
-input#new-task {
-  float: left;
-  width: 318px; }
-
-li {
-  overflow: hidden;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee; }
-
-#completed-tasks label {
-  text-decoration: line-through;
-  color: #888; }
-
-ul li.editMode input[type=text] {
-  display: block; }
-
-ul li.editMode label {
-  display: none; }
